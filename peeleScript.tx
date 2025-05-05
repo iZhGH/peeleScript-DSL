@@ -26,7 +26,13 @@ output:
 ;
 
 loop:
-  'for' begin=INT condition=('<' | '>') 'end'=INT ':' Model 'endLoop'  
+  'for' begin=INT condition=comparison end=INT ':' Model 'endLoop'  
+
+;
+
+comparison:
+  '<' | '>'
+
 ;
 
 
