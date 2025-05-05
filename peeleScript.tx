@@ -3,7 +3,7 @@ Model:
 ;
 
 Statement:
-    Attendance | Assignment
+    Attendance | Assignment | changeVar
 ;
 
 Assignment:
@@ -11,8 +11,14 @@ Assignment:
 ;
 
 Attendance:
-  'Attendance:' name=studentName
+  'Attendance' name=studentName
 ;
+
+changeVar:
+  ('Fronthand' | 'Backhand' | 'McCringleberry') name=studentName 
+
+;
+
 
 
 studentName:
