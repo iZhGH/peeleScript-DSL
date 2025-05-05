@@ -3,7 +3,7 @@ Model:
 ;
 
 Statement:
-    Attendance | Assignment | changeVar
+    Attendance | Assignment | changeVar | output
 ;
 
 Assignment:
@@ -16,6 +16,12 @@ Attendance:
 
 changeVar:
   ('Fronthand' | 'Backhand' | 'McCringleberry') name=studentName 
+
+;
+
+output:
+
+'I' 'Said!' text=/.*$/ 
 
 ;
 
