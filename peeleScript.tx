@@ -1,29 +1,16 @@
-Program:
-  'begin'
-    commands*=Command
-  'end'
+Model:
+    statements*=Statement
 ;
 
-Command:
-  InitialCommand | MoveCommand | SpinCommand
+Statement:
+    Attendance | Assignment
 ;
 
-InitialCommand:
-  'initial' x=INT ',' y=INT
+Assignment:
+    name=studentName '=' value=INT
 ;
 
-MoveCommand:
-  direction=Direction (steps=INT)?
-;
+studentName:
+  'A-Aron' | 'Jayquelin' | 'Ba-la-kay' | 'Dee-Nice' | 'Tim-o-thy'
 
-SpinCommand:
-  'spin'
-;
-
-Direction:
-  "up"|"down"|"left"|"right"|"upleft"|"upright"|"downleft"|"downright"
-;
-
-Comment:
-  /\/\/.*$/
 ;
