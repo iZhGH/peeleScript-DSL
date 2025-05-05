@@ -10,6 +10,11 @@ Assignment:
     name=studentName '=' value=INT
 ;
 
+Attendance:
+  'Attendance:' name=studentName
+;
+
+
 studentName:
   'A-Aron' | 'Jayquelin' | 'Ba-la-kay' | 'Dee-Nice' | 'Tim-o-thy'
 
