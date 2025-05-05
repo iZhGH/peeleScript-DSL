@@ -3,7 +3,7 @@ Model:
 ;
 
 Statement:
-    Attendance | Assignment | changeVar | output
+    Attendance | Assignment | changeVar | output | loop
 ;
 
 Assignment:
@@ -21,9 +21,15 @@ changeVar:
 
 output:
 
-'I' 'Said!' text=/.*$/ 
+'I' 'Said...' text=/.*$/ 
 
 ;
+
+loop:
+  'for' begin=INT condition=('<' | '>') 'end'=INT ':' Model 'endLoop'  
+;
+
+
 
 
 
