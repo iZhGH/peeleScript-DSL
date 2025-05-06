@@ -39,6 +39,9 @@ class peeleScript:
                 if self.variables[c.name] is None:
                     self.variables[c.name] = 0  
                 self.variables[c.name] += 3
+
+            elif c.__class__.__name__ == "output":
+                print(f"{c.text}")
                 
 
 
