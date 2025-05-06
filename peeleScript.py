@@ -17,8 +17,31 @@ class peeleScript:
                     print(f"{c.name} is present!")
                 else:
                     print(f"{c.name} is absent!") 
-            else:
-                print(f"Testing error")
-        
+
+
+
+            elif c.__class__.__name__ == "Assignment":
+                if c.name not in self.variables:
+                    raise NameError(f"Invalid student name: {c.name}")
+                self.variables[c.name] = c.value
+
+            elif c.__class__.__name__ == "Fronthand":
+                if self.variables[c.name] is None:
+                    self.variables[c.name] = 0  
+                self.variables[c.name] += 1
+                
+            elif c.__class__.__name__ == "Backhand":
+                if self.variables[c.name] is None:
+                    self.variables[c.name] = 0  
+                self.variables[c.name] -= 1
+            
+            elif c.__class__.__name__ == "McCringleberry":
+                if self.variables[c.name] is None:
+                    self.variables[c.name] = 0  
+                self.variables[c.name] += 3
+                
+
+
+                
 interpreter = peeleScript()
 interpreter.interpret(peele_model)

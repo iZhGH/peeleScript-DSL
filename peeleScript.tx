@@ -3,7 +3,7 @@ Model:
 ;
 
 Statement:
-    Attendance | Assignment | changeVar | output | loop
+    Attendance | Assignment | Fronthand | Backhand | McCringleberry | output | loop
 ;
 
 Assignment:
@@ -14,10 +14,19 @@ Attendance:
   'Attendance' name=studentName
 ;
 
-changeVar:
-  ('Fronthand' | 'Backhand' | 'McCringleberry') name=studentName 
-
+Fronthand:
+  'Fronthand' name=studentName
 ;
+
+Backhand:
+  'Backhand' name=studentName
+;
+
+McCringleberry:
+  'McCringleberry' name=studentName
+;
+
+
 
 output:
 
