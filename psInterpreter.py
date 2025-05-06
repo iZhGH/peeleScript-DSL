@@ -6,13 +6,25 @@ slapazzClip = pygame.mixer.Sound(slapazzAudio)
 
 from textx import metamodel_from_file
 peele_mm = metamodel_from_file('peeleScript.tx')
-peele_model = peele_mm.model_from_file('program.ps')
+
+
+
+
+# IMPORTANT!
+# UPDATE 'program.ps' with file of program you intend to run!
+# if an example program, drag it out of the examples folder!
+
+peele_model = peele_mm.model_from_file('program.ps') 
+
+
+
+
 
 class peeleScript:
 
     def __init__(self): 
         self.variables = {}
-        studentNames = ['A-Aron', 'Jayquelin', 'Ba-la-kay', 'Dee-Nice', 'Tim-o-thy']
+        studentNames = ['A-Aron', 'Jayquelin', 'Ba-la-kay', 'Dee-Nice', 'Tim-o-thy', 'O-Shag-Hennessy']
         for student in studentNames:
             self.variables[student] = None
 
@@ -20,7 +32,7 @@ class peeleScript:
         for c in model.statements:
             if c.__class__.__name__ == "Attendance":
                 if self.variables[c.name] is not None:
-                    print(f"{c.name} is present!")
+                    print(f"{c.name} is present at seat {self.variables[c.name]}")
                 else:
                     print(f"{c.name} is absent!") 
 
@@ -65,7 +77,6 @@ class peeleScript:
                         print("azz!")
                     else:
                         print(i) 
-                
 
 
                 
