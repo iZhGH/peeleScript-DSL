@@ -1,3 +1,9 @@
+import pygame
+import time 
+pygame.init()
+slapazzAudio = 'slapazz.wav'
+slapazzClip = pygame.mixer.Sound(slapazzAudio)
+
 from textx import metamodel_from_file
 peele_mm = metamodel_from_file('peeleScript.tx')
 peele_model = peele_mm.model_from_file('program.ps')
@@ -42,6 +48,23 @@ class peeleScript:
 
             elif c.__class__.__name__ == "output":
                 print(f"{c.text}")
+                
+
+            elif c.__class__.__name__ == "slapAzz":
+                if c.fizz == 0 or c.buzz == 0:
+                    raise ValueError("slap/Azz cannot be 0!")
+                
+                for i in range(1, c.length + 1):
+                    if i % c.fizz == 0 and i % c.buzz == 0:
+                        print("slapAzz!")
+                        slapazzClip.play()
+                        time.sleep(2)
+                    elif i % c.fizz == 0:
+                        print("slap!")
+                    elif i % c.buzz == 0:
+                        print("azz!")
+                    else:
+                        print(i) 
                 
 
 

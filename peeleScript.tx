@@ -3,7 +3,7 @@ Model:
 ;
 
 Statement:
-    Attendance | Assignment | Fronthand | Backhand | McCringleberry | output | loop
+    Attendance | Assignment | Fronthand | Backhand | McCringleberry | output | slapAzz
 ;
 
 Assignment:
@@ -34,8 +34,8 @@ output:
 
 ;
 
-loop:
-  'for' begin=INT condition=comparison end=INT ':' Model 'endLoop'  
+slapAzz:
+  'slap' fizz=INT 'azz' buzz=INT 'for' length=INT
 
 ;
 
